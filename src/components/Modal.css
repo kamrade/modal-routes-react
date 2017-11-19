@@ -1,4 +1,11 @@
 .Modal {
   padding: 2rem;
-  background-color: #f1f2f5;
+  color: white;
+  background-color: rgba(0,0,0,0.92);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
 }

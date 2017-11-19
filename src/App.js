@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import Home from "./components/Home";
 import About from "./components/About";
 import Topics from "./components/Topics";
+import Header from "./components/Header";
 
 import Modal from "./components/Modal";
 
@@ -11,21 +12,12 @@ import './App.css';
 
 class App extends Component {
 
-  componentDidUpdate(prevProps) {
-    // console.log(this.props.location);
-  }
-
   render() {
 
     return (
       <div className="App">
         <h2>App</h2>
-        <ul className="navigation">
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/topics">Topics</Link></li>
-          <li><Link to="#modal">Show Modal</Link></li>
-        </ul>
+        <Header/>
         <hr/>
 
       <div className="content">
