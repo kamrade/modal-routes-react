@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
-import About from "./components/About";
+import Dashboard from "./components/pages/Dashboard";
+import Cards from "./components/pages/Cards";
+import Card from "./components/pages/Card";
+import Orders from "./components/pages/Orders";
+import LoadHistory from "./components/pages/LoadHistory";
+import ManageProfile from "./components/pages/ManageProfile";
+
 import Topics from "./components/Topics";
 import Header from "./components/Header";
 
@@ -19,9 +23,13 @@ class App extends Component {
         <hr/>
 
         <div className="content">
-          <Route exact path="/" component={Home} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/about" component={About} />
+          <Route exact path="/" render={props => <Redirect to="dashboard" />} />
+          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/cards/" component={Cards} />
+          <Route path="/cards/:_id" component={Card} />
+          <Route path="/orders" component={Orders} />
+          <Route path="/load-history" component={LoadHistory} />
+          <Route path="/manage-profile" component={ManageProfile} />
           <Route path="/topics" component={Topics} />
         </div>
 

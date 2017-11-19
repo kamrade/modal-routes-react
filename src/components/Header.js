@@ -1,20 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
   return (
     <div className="header">
 
       <ul className="nav nav-main">
-        <li><Link to="/dashboard">Dashboard</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/topics">Topics</Link></li>
+        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+        <li><NavLink to="/cards">Cards</NavLink></li>
+        <li><NavLink to="/orders">Orders</NavLink></li>
+        <li><NavLink to="/load-history">Load History</NavLink></li>
+        <li><NavLink to="/manage-profile">Manage Profile</NavLink></li>
+        <li><NavLink to="/topics">Topics</NavLink></li>
       </ul>
 
       <ul className="nav nav-auxiliary">
         <li><Link to="#modal">Empty Modal</Link></li>
-        <li><Link to="#modal-dialog">Modal Dialog</Link></li>
-        <li><Link to="#modal-options">Modal Options</Link></li>
+        <li><Link to="#modal-order">Order</Link></li>
+        <li><Link to="#modal-multiorder">Multiorder</Link></li>
+        <li><Link to="#modal-massload">Mass Load</Link></li>
       </ul>
 
     </div>

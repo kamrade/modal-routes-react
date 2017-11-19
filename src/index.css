@@ -26,10 +26,17 @@ body {
 .nav li {
   display: inline-block;
   padding: 0.5rem;
+}
 
+a.active, a.active:link, a.active:visited {
+  color: red;
 }
 
 .header {
   display: flex;
   justify-content: space-between;
+}
+
+.text-muted {
+  color: #727579;
 }

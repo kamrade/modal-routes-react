@@ -9,14 +9,16 @@ class Modal extends Component {
     let modal = hash.indexOf("#modal") > -1;
     let modalRoute = hash.substring(7, hash.length);
 
-    let dialog = () => (<h4>Dialog</h4>);
-
     if (modal) {
       return (
         <div className="Modal">
-          <h4>Modal</h4>
-          { modalRoute === "dialog" ? (<h4>Dialog</h4>) : '' }
-          { modalRoute === "options" ? (<h4>Options</h4>) : '' }
+
+          <h4 className="text-muted">Modal</h4>
+
+          { modalRoute === "order" ? (<h2>Order</h2>) : '' }
+          { modalRoute === "multiorder" ? (<h2>Multiorder</h2>) : '' }
+          { modalRoute === "massload" ? (<h2>Mass Load</h2>) : '' }
+
           <button onClick={() => this.props.history.push(this.props.location.pathname)}>Close</button>
         </div>
       )
