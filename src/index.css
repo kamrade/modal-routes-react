@@ -3,3 +3,33 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.Modal {
+  padding: 2rem;
+  color: white;
+  background-color: rgba(0,0,0,0.92);
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 0.5rem;
+
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
