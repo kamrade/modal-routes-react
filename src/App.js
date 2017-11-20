@@ -28,8 +28,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        <Alert />
-
+        {this.props.alerts.map(item => <Alert message={item.message} />)}
         <div className="content">
           <Route exact path="/" render={props => <Redirect to="dashboard" />} />
           <Route exact path="/dashboard" component={Dashboard} />

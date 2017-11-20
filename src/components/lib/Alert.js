@@ -4,7 +4,7 @@ class Alert extends Component {
   render() {
     return (
       <div className="Alert">
-        <h4>Alert</h4>
+        <p><small>{this.props.message}</small></p>
       </div>
     )
   };
