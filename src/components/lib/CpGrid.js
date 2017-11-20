@@ -8,18 +8,18 @@ class CpGrid extends Component {
       <p>There are nothing to show.</p>
     );
     const cardsList = (
-      <p>List</p>
+      <p>Items List</p>
     );
     return (
       <div className="CpGrid">
-        { this.props.cards.length === 0 ? emptyMessage : cardsList }
+        { this.props.items.length === 0 ? emptyMessage : cardsList }
       </div>
     )
   };
 }
 
 CpGrid.propTypes = {
-  cards: PropTypes.array.isRequired
+  items: PropTypes.array.isRequired
 };
 
 export default CpGrid;

@@ -40,3 +40,8 @@ a.active, a.active:link, a.active:visited {
 .text-muted {
   color: #727579;
 }
+
+.card {
+  padding: 1rem;
+  border: 1px solid #f1f3f5;
+}

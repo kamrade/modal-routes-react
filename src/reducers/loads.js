@@ -1,10 +1,10 @@
-import { SET_CARDS } from '../actions';
+import { SET_LOADS } from '../actions';
 
 export default function cards(state = [], action = {}) {
   switch(action.type) {
 
-    case SET_CARDS:
-      return action.cards;
+    case SET_LOADS:
+      return action.loads;
 
     default:
       return state;
