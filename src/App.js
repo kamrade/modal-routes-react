@@ -10,8 +10,9 @@ import ManageProfile from "./components/pages/ManageProfile";
 
 import Topics from "./components/Topics";
 import Header from "./components/Header";
-
 import Modal from "./components/Modal";
+
+import Alert from "./components/lib/Alert";
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
+        <Alert />
         <hr/>
 
         <div className="content">
