@@ -8,10 +8,10 @@ const cards = require('./data/cards-mock-data');
 const loads = require('./data/loads-mock-data');
 const alerts = [
   {
-    id: 1,
+    _id: 1,
     message: "Pariatur quod veniam rem aperiam laboriosam autem, adipisci ut tenetur, voluptates ad! Omnis quia ad expedita."
   }, {
-    id: 2,
+    _id: 2,
     message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem iusto esse corrupti eum, aliquam."
   }
 ];
