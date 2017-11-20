@@ -3,8 +3,6 @@ import React, { Component } from 'react';
 class Modal extends Component {
 
   render() {
-    console.log(this.props.location.pathname);
-    // let modal = this.props.location.hash === "#modal";
     let hash = this.props.location.hash;
     let modal = hash.indexOf("#modal") > -1;
     let modalRoute = hash.substring(7, hash.length);

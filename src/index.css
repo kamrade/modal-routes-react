@@ -58,3 +58,15 @@ a.active, a.active:link, a.active:visited {
 .content {
   padding: 1rem;
 }
+
+.component {
+  position: relative;
+}
+
+.cp-close {
+  position: absolute;
+  z-index: 1;
+  top: 0.75rem;
+  right: 0.75rem;
+  cursor: pointer;
+}

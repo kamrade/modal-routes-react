@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 import PropTypes from 'prop-types';
 
-import { fetchAlerts } from './actions';
+import { fetchAlerts, removeAlert } from './actions';
 
 import Dashboard from "./components/pages/Dashboard";
 import Cards from "./components/pages/Cards";
@@ -28,7 +28,16 @@ class App extends Component {
     return (
       <div className="App">
         <Header/>
-        {this.props.alerts.map((item, index) => <Alert key={item._id} message={item.message} />)}
+        {this.props.alerts.map((item, index) => {
+          return (
+            <Alert
+              key={index}
+              removeAlert={this.props.removeAlert}
+              id={item._id}
+              message={item.message}
+            />
+          )
+        })}
         <div className="content">
           <Route exact path="/" render={props => <Redirect to="dashboard" />} />
           <Route exact path="/dashboard" component={Dashboard} />
@@ -50,7 +59,8 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fetchAlerts: PropTypes.func.isRequired
+  fetchAlerts: PropTypes.func.isRequired,
+  removeAlert: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -59,6 +69,4 @@ function mapStateToProps(state) {
   };
 };
 
-
-export default withRouter( connect(mapStateToProps, { fetchAlerts })(App));
-// export default withRouter( connect(mapStateToProps, { fetchAlerts })(Dashboard) );
+export default withRouter( connect(mapStateToProps, { fetchAlerts, removeAlert })(App));

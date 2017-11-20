@@ -1,6 +1,6 @@
-export const SET_CARDS = 'SET_CARDS';
-export const SET_LOADS = 'SET_LOADS';
-export const SET_ALERTS = 'SET_ALERTS';
+export const SET_CARDS    = 'SET_CARDS';
+export const SET_LOADS    = 'SET_LOADS';
+export const SET_ALERTS   = 'SET_ALERTS';
 
 export function setCards(cards) {
   return {
@@ -21,6 +21,31 @@ export function setAlerts(alerts) {
     type: SET_ALERTS,
     alerts
   };
+}
+
+export function removeAlert(id) {
+  return dispatch => {
+    return fetch('/api/alert', {
+      method: 'POST',
+      body: JSON.stringify({ id }),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+      .then(data => dispatch(setAlerts(data.alerts)))
+  }
+}
+
+function handleResponse(response) {
+  if (response.ok) {
+    console.log('response ok');
+    return response.json();
+  } else {
+    console.log('response error');
+    let error = new Error(response.statusText);
+    error.response = response;
+    throw error;
+  }
 }
 
 export function fetchCards() {
