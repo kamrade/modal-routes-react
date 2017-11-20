@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
+
+import PropTypes from 'prop-types';
+
+import { fetchAlerts } from './actions';
+
 import Dashboard from "./components/pages/Dashboard";
 import Cards from "./components/pages/Cards";
 import Card from "./components/pages/Card";
@@ -22,7 +29,6 @@ class App extends Component {
       <div className="App">
         <Header/>
         <Alert />
-        <hr/>
 
         <div className="content">
           <Route exact path="/" render={props => <Redirect to="dashboard" />} />
@@ -40,8 +46,20 @@ class App extends Component {
         </div>
 
       </div>
-    );
+    )
   }
 }
 
-export default App;
+App.propTypes = {
+  fetchAlerts: PropTypes.func.isRequired
+};
+
+function mapStateToProps(state) {
+  return {
+    alerts: state.alerts
+  };
+};
+
+
+export default withRouter( connect(mapStateToProps, { fetchAlerts })(App));
+// export default withRouter( connect(mapStateToProps, { fetchAlerts })(Dashboard) );

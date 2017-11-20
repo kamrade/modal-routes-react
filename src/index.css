@@ -35,6 +35,7 @@ a.active, a.active:link, a.active:visited {
 .header {
   display: flex;
   justify-content: space-between;
+  padding: 0.5rem 1rem;
 }
 
 .text-muted {
@@ -43,5 +44,17 @@ a.active, a.active:link, a.active:visited {
 
 .card {
   padding: 1rem;
+  margin: 1rem 0;
   border: 1px solid #f1f3f5;
+}
+
+.Alert {
+  padding: 0.5rem 1rem;
+  margin: 1rem;
+  background-color: rgba(240, 150, 0, 0.15);
+  border-radius: 2px;
+}
+
+.content {
+  padding: 1rem;
 }
