@@ -26,7 +26,7 @@ class CpGrid extends Component {
           <table className="table table-hover">
             <thead>
               <tr className="table-header">
-                {headers.map((item, index) => (<th key={index}>{item}</th>))}
+                {headers.map((item, index) => (<th scope="col" key={index}>{item}</th>))}
               </tr>
             </thead>
             <tbody>

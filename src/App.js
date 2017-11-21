@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom'
 
 import PropTypes from 'prop-types';
 
-import { fetchAlerts, removeAlert } from './actions';
+import { fetchAlerts, removeAlert, fetchCards, fetchLoads, showTooltip, hideTooltip } from './actions';
 
 import Dashboard from "./components/pages/Dashboard";
 import Cards from "./components/pages/Cards";
@@ -18,17 +18,53 @@ import ManageProfile from "./components/pages/ManageProfile";
 import Topics from "./components/Topics";
 import Header from "./components/Header";
 import Modal from "./components/Modal";
+import Tooltip from "./components/lib/Tooltip";
 
 import Alert from "./components/lib/Alert";
 
 class App extends Component {
   componentDidMount() {
     this.props.fetchAlerts();
+    this.props.fetchCards();
+    this.props.fetchLoads();
+
+    let that = this;
+
+    document.addEventListener('mouseup', function() {
+
+      let selection = window.getSelection();
+      let range = selection.getRangeAt(0);
+      let rect = range.getBoundingClientRect();
+
+      let params = {
+        message: "test1 message",
+        bottom: rect.bottom,
+        height: rect.height,
+        left: rect.left,
+        right: rect.right,
+        top: rect.top,
+        width: rect.width,
+        x: rect.x,
+        y: rect.y
+      };
+
+      that.props.showTooltip(params);
+
+    }, false);
+
+
+
   }
   render() {
 
     return (
       <div className="App">
+        <button
+          onClick={this.props.showTooltip.bind(this)}
+          className="btn btn-primary">Show</button>
+        <button
+          onClick={this.props.hideTooltip.bind(this)}
+          className="btn btn-secondary">Hide</button>
         <Header/>
         {this.props.alerts.map((item, index) => {
           return (
@@ -51,6 +87,9 @@ class App extends Component {
           <Route path="/topics" component={Topics} />
         </div>
 
+        <Tooltip />
+
+
         <div className="modalContainer">
           <Route component={Modal} />
         </div>
@@ -62,7 +101,10 @@ class App extends Component {
 
 App.propTypes = {
   fetchAlerts: PropTypes.func.isRequired,
-  removeAlert: PropTypes.func.isRequired
+  removeAlert: PropTypes.func.isRequired,
+  fetchCards:  PropTypes.func.isRequired,
+  fetchLoads:  PropTypes.func.isRequired,
+  showTooltip: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -71,4 +113,11 @@ function mapStateToProps(state) {
   };
 };
 
-export default withRouter( connect(mapStateToProps, { fetchAlerts, removeAlert })(App));
+export default withRouter( connect(mapStateToProps, {
+  fetchAlerts,
+  removeAlert,
+  fetchCards,
+  fetchLoads,
+  showTooltip,
+  hideTooltip
+})(App));

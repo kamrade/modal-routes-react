@@ -5,13 +5,9 @@ import { withRouter } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 import CpGrid from 'components/lib/CpGrid';
-import { fetchCards, fetchLoads } from 'actions';
 
 class Dashboard extends Component {
-  componentDidMount() {
-    this.props.fetchCards();
-    this.props.fetchLoads();
-  }
+
   render() {
 
     let cardHeaders = [
@@ -50,8 +46,7 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   cards: PropTypes.array.isRequired,
-  fetchCards: PropTypes.func.isRequired,
-  fetchLoads: PropTypes.func.isRequired,
+  loads: PropTypes.array.isRequired
 };
 
 function mapStateToProps(state) {
@@ -61,4 +56,4 @@ function mapStateToProps(state) {
   };
 };
 
-export default withRouter( connect(mapStateToProps, { fetchCards, fetchLoads })(Dashboard) );
+export default withRouter( connect(mapStateToProps, {  })(Dashboard) );

@@ -1,9 +1,13 @@
-@import "node_modules/b2b-styles/src/style/style";
+@import "node_modules/b2b-styles/src/style/style.scss";
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.App {
+  position: relative;
 }
 
 .Modal {
@@ -48,13 +52,6 @@ a.active, a.active:link, a.active:visited {
   padding: 1rem;
   margin: 1rem 0;
   border: 1px solid #f1f3f5;
-}
-
-.Alert {
-  padding: 0.25rem 1rem;
-  margin: 1rem;
-  background-color: rgba(240, 150, 0, 0.15);
-  border-radius: 2px;
 }
 
 p {
