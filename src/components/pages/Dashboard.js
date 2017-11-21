@@ -4,14 +4,13 @@ import { withRouter } from 'react-router-dom'
 
 import PropTypes from 'prop-types';
 
-import CpGrid from '../lib/CpGrid';
-import { fetchCards, fetchLoads, fetchAlerts } from '../../actions';
+import CpGrid from 'components/lib/CpGrid';
+import { fetchCards, fetchLoads } from 'actions';
 
 class Dashboard extends Component {
   componentDidMount() {
     this.props.fetchCards();
     this.props.fetchLoads();
-    this.props.fetchAlerts();
   }
   render() {
     return (
@@ -21,7 +20,7 @@ class Dashboard extends Component {
           <CpGrid items={this.props.cards} />
         </div>
         <div className="card">
-          <CpGrid items={this.props.cards} />
+          <CpGrid items={this.props.loads} />
         </div>
       </div>
     )
@@ -32,15 +31,13 @@ Dashboard.propTypes = {
   cards: PropTypes.array.isRequired,
   fetchCards: PropTypes.func.isRequired,
   fetchLoads: PropTypes.func.isRequired,
-  fetchAlerts: PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     cards: state.cards,
-    loads: state.loads,
-    alerts: state.alerts
+    loads: state.loads
   };
 };
 
-export default withRouter( connect(mapStateToProps, { fetchCards, fetchLoads, fetchAlerts })(Dashboard) );
+export default withRouter( connect(mapStateToProps, { fetchCards, fetchLoads })(Dashboard) );

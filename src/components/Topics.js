@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Link, Route } from 'react-router-dom';
 
-import Topic from './Topic';
+import Topic from 'components/Topic';
 
 class Topics extends Component {
   render() {

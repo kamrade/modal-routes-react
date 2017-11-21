@@ -49,10 +49,14 @@ a.active, a.active:link, a.active:visited {
 }
 
 .Alert {
-  padding: 0.5rem 1rem;
+  padding: 0.25rem 1rem;
   margin: 1rem;
   background-color: rgba(240, 150, 0, 0.15);
   border-radius: 2px;
+}
+
+p {
+  margin: 0.5rem;
 }
 
 .content {

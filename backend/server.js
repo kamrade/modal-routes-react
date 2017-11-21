@@ -30,17 +30,14 @@ let alerts = [
 // Just for now let's use dummy mock data
 
 app.get('/api/cards', (req, res) => {
-  console.log('get all cards');
   res.json({ cards });
 });
 
 app.get('/api/loads', (req, res) => {
-  console.log('get all loads');
   res.json({ loads });
 });
 
 app.get('/api/alerts', (req, res) => {
-  console.log('get all alerts');
   res.json({ alerts });
 });
 

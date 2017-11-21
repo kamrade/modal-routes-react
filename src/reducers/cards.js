@@ -1,4 +1,4 @@
-import { SET_CARDS } from '../actions';
+import { SET_CARDS } from 'actions';
 
 export default function cards(state = [], action = {}) {
   switch(action.type) {

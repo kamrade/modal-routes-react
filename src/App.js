@@ -22,7 +22,9 @@ import Modal from "./components/Modal";
 import Alert from "./components/lib/Alert";
 
 class App extends Component {
-
+  componentDidMount() {
+    this.props.fetchAlerts();
+  }
   render() {
 
     return (

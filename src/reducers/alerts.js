@@ -1,4 +1,4 @@
-import { SET_ALERTS } from '../actions';
+import { SET_ALERTS } from 'actions';
 
 export default function cards(state = [], action = {}) {
   switch(action.type) {
