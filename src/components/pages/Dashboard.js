@@ -13,14 +13,35 @@ class Dashboard extends Component {
     this.props.fetchLoads();
   }
   render() {
+
+    let cardHeaders = [
+      'cardID',
+      'cardNumber',
+      'status',
+      'curr',
+      'expDate',
+      'firstName',
+      'email',
+      'phone'
+    ];
+
+    let loadHeaders = [
+      'loadID',
+      'cardNumber',
+      'amount',
+      'curr',
+      'description',
+      'status'
+    ]
+
     return (
       <div className="Dashboard">
-        <h4>Dashboard</h4>
+        <h2>Dashboard</h2>
         <div className="card">
-          <CpGrid items={this.props.cards} />
+          <CpGrid data={this.props.cards} headers={cardHeaders} title="Last 10 card orders"/>
         </div>
         <div className="card">
-          <CpGrid items={this.props.loads} />
+          <CpGrid data={this.props.loads} headers={loadHeaders} title="Last 10 card loads"/>
         </div>
       </div>
     )

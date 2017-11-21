@@ -6,7 +6,9 @@ class CpGrid extends Component {
 
   render() {
 
-    console.log('render cp-grid', this.props.items.length);
+    let data = this.props.data || [];
+    let headers = this.props.headers || [];
+    let title = this.props.title || '';
 
     const emptyMessage = (
       <p>There are nothing to show.</p>
@@ -18,7 +20,31 @@ class CpGrid extends Component {
 
     return (
       <div className="CpGrid">
-        { this.props.items.length === 0 ? emptyMessage : cardsList }
+        { data.length === 0 ? emptyMessage : cardsList }
+        <h3>{title}</h3>
+        <div className="table-wrapper">
+          <table className="table table-hover">
+            <thead>
+              <tr className="table-header">
+                {headers.map((item, index) => (<th key={index}>{item}</th>))}
+              </tr>
+            </thead>
+            <tbody>
+              {data.map((dataItem, dataIndex) => {
+                return (<tr key={dataIndex}>
+                  {headers.map((head, headIndex) => {
+                    return (
+                      <td key={headIndex}>
+                        {dataItem[head]}
+                      </td>
+                    );
+                  })}
+                </tr>)
+              })}
+            </tbody>
+          </table>
+        </div>
+
       </div>
     )
 
@@ -26,7 +52,8 @@ class CpGrid extends Component {
 }
 
 CpGrid.propTypes = {
-  items: PropTypes.array.isRequired
+  data: PropTypes.array.isRequired,
+  headers: PropTypes.array.isRequired
 };
 
 export default CpGrid;

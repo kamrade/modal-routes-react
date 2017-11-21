@@ -42,7 +42,7 @@ class App extends Component {
         })}
         <div className="content">
           <Route exact path="/" render={props => <Redirect to="dashboard" />} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route exact path="/dashboard" component={Dashboard}/>
           <Route exact path="/cards/" component={Cards} />
           <Route path="/cards/:_id" component={Card} />
           <Route path="/orders" component={Orders} />
