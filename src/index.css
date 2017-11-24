@@ -4681,6 +4681,16 @@ input::-webkit-contacts-auto-fill-button {
 body {
   font-family: 'Roboto', sans-serif; }
 
+a:focus {
+  outline: none;
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1); }
+
+body {
+  min-width: 1000px; }
+
+.show {
+  display: block !important; }
+
 .container-sm {
   max-width: 558px; }
 
@@ -4935,7 +4945,8 @@ a.btn-warning:visited, a.btn-warning:link {
   margin: 0;
   padding: 0;
   font-size: 13px;
-  line-height: 1rem; }
+  line-height: 1rem;
+  flex-grow: 2; }
 
 .nav li {
   display: inline-block; }
@@ -4966,12 +4977,80 @@ a.btn-warning:visited, a.btn-warning:link {
     .Header .logo-container .logo-image {
       max-height: 100%; }
 
+.DropdownSmooth {
+  position: relative; }
+  .DropdownSmooth .btn-dds {
+    line-height: 1rem;
+    font-size: 13px;
+    vertical-align: top;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 6px 0;
+    width: 2rem;
+    border: 2px solid #0090FF;
+    transition: all 0.2s ease-in-out; }
+    .DropdownSmooth .btn-dds:active, .DropdownSmooth .btn-dds:focus {
+      border: 2px solid white;
+      background-color: #0090FF;
+      color: white;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2); }
+    .DropdownSmooth .btn-dds:hover {
+      background-color: #0090FF;
+      color: white; }
+  .DropdownSmooth .dds-items-container {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 2.75rem;
+    transform: translateX(-50%);
+    padding: 0;
+    background-color: #fff;
+    border-radius: 0.1875rem;
+    box-shadow: 0 0 16px rgba(0, 0, 0, 0.08), 0 0 4px rgba(0, 0, 0, 0.08);
+    border-top: 6px solid #0090FF;
+    max-width: 320px;
+    min-width: 120px; }
+    .DropdownSmooth .dds-items-container::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 9px solid #0090FF;
+      position: absolute;
+      z-index: 3;
+      top: -14px;
+      left: 50%;
+      transform: translate(-50%); }
+    .DropdownSmooth .dds-items-container .dds--items-list {
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      .DropdownSmooth .dds-items-container .dds--items-list .dds--item-link {
+        display: block;
+        padding: 0.75rem 1rem;
+        white-space: nowrap;
+        font-size: 13px;
+        line-height: 1rem;
+        color: #868e96; }
+        .DropdownSmooth .dds-items-container .dds--items-list .dds--item-link:hover {
+          background-color: #f8f9fa; }
+
 body {
   margin: 0;
   padding: 0; }
 
 .App {
   position: relative; }
+
+.header-item-container {
+  margin: 1rem 0.5rem; }
+  .header-item-container p {
+    margin: 0;
+    padding: 0.5rem;
+    line-height: 1rem;
+    font-size: 13px; }
 
 .Modal {
   padding: 2rem;

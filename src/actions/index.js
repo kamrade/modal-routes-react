@@ -89,7 +89,7 @@ export function hideTooltip() {
   return {
     type: HIDE_TOOLTIP,
     show: false,
-    message: 'hidden message',
+    message: '',
     top: 0,
     left: 0,
     width: 0

@@ -1,5 +1,6 @@
 @import "node_modules/b2b-styles/src/style/style.scss";
 @import "./styles/Header";
+@import "./styles/DropdownSmooth";
 
 body {
   margin: 0;
@@ -8,6 +9,16 @@ body {
 
 .App {
   position: relative;
+}
+
+.header-item-container {
+  margin: 1rem 0.5rem;
+  p {
+    margin: 0;
+    padding: 0.5rem;
+    line-height: 1rem;
+    font-size: 13px;
+  }
 }
 
 .Modal {

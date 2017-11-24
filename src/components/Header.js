@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Dropdown from './lib/Dropdown';
 
 function Header(props) {
   return (
@@ -18,12 +19,19 @@ function Header(props) {
         <li><NavLink to="/topics">Topics</NavLink></li>
       </ul>
 
-      <ul className="nav nav-auxiliary">
+      <div className="header-item-container">
+        <Dropdown></Dropdown>
+      </div>
+      <div className="header-item-container">
+        <p>Username</p>
+      </div>
+
+      {/* <ul className="nav nav-auxiliary">
         <li><Link to="#modal">Empty Modal</Link></li>
         <li><Link to="#modal-order">Order</Link></li>
         <li><Link to="#modal-multiorder">Multiorder</Link></li>
         <li><Link to="#modal-massload">Mass Load</Link></li>
-      </ul>
+      </ul> */}
 
     </div>
   )

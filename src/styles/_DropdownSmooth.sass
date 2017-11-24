@@ -1,0 +1,65 @@
+.DropdownSmooth
+  position: relative
+
+  .btn-dds
+    line-height: 1rem
+    font-size: 13px
+    vertical-align: top
+    cursor: pointer
+    border-radius: 50%
+    padding: 6px 0
+    width: 2rem
+    border: 2px solid $primary
+    +transition($transition-base)
+    &:active, &:focus
+      border: 2px solid white
+      background-color: $primary
+      color: white
+      box-shadow: 0 1px 8px rgba(0,0,0,0.2)
+    &:hover
+      background-color: $primary
+      color: white
+
+  .dds-items-container
+    display: none
+    position: absolute
+    z-index: 3
+    left: 50%
+    top: 2.75rem
+    transform: translateX(-50%)
+    padding: 0
+    background-color: #fff
+    border-radius: $border-radius*3
+    box-shadow: 0 0 16px rgba(0,0,0,0.08), 0 0 4px rgba(0,0,0,0.08)
+    border-top: 6px solid $primary
+    max-width: 320px
+    min-width: 120px
+
+    // triangle on the top
+    &::before
+      content: ''
+      width: 0
+      height: 0
+      border-left: 8px solid transparent
+      border-right: 8px solid transparent
+      border-bottom: 9px solid $primary
+      position: absolute
+      z-index: 3
+      top: -14px
+      left: 50%
+      transform: translate(-50%)
+
+    .dds--items-list
+      margin: 0
+      padding: 0
+      list-style: none
+
+      .dds--item-link
+        display: block
+        padding: 0.75rem 1rem
+        white-space: nowrap
+        font-size: 13px
+        line-height: 1rem
+        color: $text-muted
+        &:hover
+          background-color: $bg-light

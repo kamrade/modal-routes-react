@@ -30,15 +30,12 @@ class App extends Component {
 
     let that = this;
 
+    // tooltips
     document.addEventListener('mouseup', function() {
-
       let selection = window.getSelection();
       if (selection.anchorNode) {
         let range = selection.getRangeAt(0);
         let rect = range.getBoundingClientRect();
-
-        // console.log(selection.focusNode.data);
-
         let params = {
           message: selection.focusNode.data,
           bottom: rect.bottom,
