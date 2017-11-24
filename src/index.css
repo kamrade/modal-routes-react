@@ -5091,6 +5091,21 @@ a.btn-warning:visited, a.btn-warning:link {
   text-overflow: ellipsis;
   color: #868e96; }
 
+.CpGrid .table-cell {
+  cursor: pointer; }
+  .CpGrid .table-cell::after {
+    content: '\f142';
+    font: normal normal normal 14px/1 FontAwesome;
+    color: #dee2e6;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.25rem;
+    width: 0.5rem;
+    height: 1rem;
+    visibility: hidden; }
+  .CpGrid .table-cell:hover::after {
+    visibility: visible; }
+
 body {
   margin: 0;
   padding: 0; }

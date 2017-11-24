@@ -68,8 +68,9 @@ class App extends Component {
           } else {
             that.props.hideTooltip();
           }
+        } else {
+          that.props.hideTooltip();
         }
-
       } else {
         that.props.hideTooltip();
       }

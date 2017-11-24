@@ -11,3 +11,20 @@
     overflow: hidden
     text-overflow: ellipsis
     color: $text-muted
+
+  .table-cell
+    cursor: pointer
+    &::after
+      content: '\f142'
+      font: normal normal normal 14px/1 FontAwesome
+      color: $gray-300
+      display: inline-block
+      vertical-align: middle
+      margin-left: 0.25rem
+      width: 0.5rem
+      height: 1rem
+      // background-color: red
+      visibility: hidden
+    &:hover
+      &::after
+        visibility: visible

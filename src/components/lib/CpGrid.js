@@ -9,14 +9,14 @@ class CpGrid extends Component {
       case 'description':
         return (
           <td key={index} >
-            <span data-tooltip="true" className={head}>{dataItem[head]}</span>
+            <span data-tooltip="true" className={`table-cell ${head}`}>{dataItem[head]}</span>
           </td>
         );
 
       case 'firstName':
         return (
           <td key={index}>
-            <span className={`${head} + text-muted`}>
+            <span className={`table-cell ${head} + text-muted`}>
               {dataItem[head]}
             </span>
           </td>
@@ -25,7 +25,7 @@ class CpGrid extends Component {
       case 'curr':
         return (
           <td key={index}>
-            <span className={`${head} + big-value`}>
+            <span className={`table-cell ${head} + big-value`}>
               {dataItem[head]}
             </span>
           </td>
@@ -51,7 +51,7 @@ class CpGrid extends Component {
 
         return (
           <td key={index}>
-            <span className={`${head} ${classColor}`}>
+            <span className={`table-cell ${head} ${classColor}`}>
               <i className={classIcon} aria-hidden="true"></i>
               {dataItem[head]}
             </span>
@@ -61,7 +61,7 @@ class CpGrid extends Component {
       default:
         return (
           <td key={index}>
-            <span className={head}>
+            <span className={`table-cell ${head}`}>
               {dataItem[head]}
             </span>
           </td>
