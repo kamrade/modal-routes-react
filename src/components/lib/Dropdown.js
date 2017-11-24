@@ -6,26 +6,9 @@ class Dropdown extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      showDropdown: false,
-      items: [{
-        id: 1,
-        path: '#modal-order',
-        title: 'Single Card'
-      }, {
-        id: 2,
-        path: '#modal-multiorder',
-        title: 'Multiorder'
-      }, {
-        id: 3,
-        path: '#modal-massload',
-        title: 'Mass Load'
-      }, {
-        id: 4,
-        path: '#modal',
-        title: 'Empty Modal'
-      }]
-    };
+
+    this.state = this.props.items;
+
   }
 
   componentWillMount() {

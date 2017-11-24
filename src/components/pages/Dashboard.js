@@ -29,10 +29,10 @@ class Dashboard extends Component {
 
     return (
       <div className="Dashboard">
-        <div className="card mb-3">
+        <div className="mb-3">
           <CpGrid data={this.props.cards} headers={cardHeaders} title="Last 10 card orders"/>
         </div>
-        <div className="card">
+        <div className="">
           <CpGrid data={this.props.loads} headers={loadHeaders} title="Last 10 card loads"/>
         </div>
       </div>

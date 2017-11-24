@@ -10,13 +10,22 @@ class Modal extends Component {
     this.props.history.push(this.props.location.pathname);
   }
 
+  /*
+    Тут по хорошему нужно в стейт перенести все переменные
+  */
+  componentDidUpdate() {
+    let hash = this.props.location.hash;
+    let modal = hash.indexOf("#modal") > -1;
+    if (modal) this.props.setModal(true);
+  }
+
   render() {
     let hash = this.props.location.hash;
     let modal = hash.indexOf("#modal") > -1;
     let modalRoute = hash.substring(7, hash.length);
 
     if (modal) {
-      this.props.setModal(true);
+      // this.props.setModal(true);
       return (
         <div className="Modal">
 
@@ -26,7 +35,7 @@ class Modal extends Component {
           { modalRoute === "multiorder" ? (<h2>Multiorder</h2>) : '' }
           { modalRoute === "massload" ? (<h2>Mass Load</h2>) : '' }
 
-          <button onClick={this.goBack.bind(this)}>Close</button>
+          <button className="btn btn-primary" onClick={this.goBack.bind(this)}>Close</button>
         </div>
       )
     } else {

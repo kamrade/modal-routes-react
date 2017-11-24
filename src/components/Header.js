@@ -3,6 +3,28 @@ import { NavLink } from 'react-router-dom';
 import Dropdown from './lib/Dropdown';
 
 function Header(props) {
+
+  let dropdownItems = {
+    showDropdown: false,
+    items: [{
+      id: 1,
+      path: '#modal-order',
+      title: 'Single Card'
+    }, {
+      id: 2,
+      path: '#modal-multiorder',
+      title: 'Multiorder'
+    }, {
+      id: 3,
+      path: '#modal-massload',
+      title: 'Mass Load'
+    }, {
+      id: 4,
+      path: '#modal',
+      title: 'Empty Modal'
+    }]
+  };
+
   return (
     <div className="Header">
 
@@ -20,12 +42,14 @@ function Header(props) {
       </ul>
 
       <div className="header-item-container">
-        <Dropdown></Dropdown>
+        <Dropdown
+          items={dropdownItems}
+        ></Dropdown>
       </div>
       <div className="header-item-container">
         <p><i className="fa fa-user pr-2" aria-hidden="true"></i>Username</p>
       </div>
-      
+
     </div>
   )
 }
