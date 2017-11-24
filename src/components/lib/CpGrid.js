@@ -5,16 +5,63 @@ class CpGrid extends Component {
 
   renderCell(head, index, dataItem) {
     switch(head) {
+
+      case 'description':
+        return (
+          <td key={index} >
+            <span data-tooltip="true" className={head}>{dataItem[head]}</span>
+          </td>
+        );
+
       case 'firstName':
-        return (<td key={index} className={head}>
-                  <span className="text-muted">
-                    {dataItem[head]}
-                  </span>
-                </td>);
+        return (
+          <td key={index} className={head}>
+            <span className="text-muted">
+              {dataItem[head]}
+            </span>
+          </td>
+        );
+
+      case 'curr':
+        return (
+          <td key={index} className={head + ' big-value'}>
+            {dataItem[head]}
+          </td>
+        );
+
+      case 'status':
+        let classColor = '';
+        let classIcon  = 'fa pr-1 ';
+
+        if (dataItem[head].toLowerCase() === 'active') {
+          classColor += 'text-success';
+          classIcon  += 'fa-check-circle';
+        } else if (dataItem[head].toLowerCase() === 'loaded') {
+          classColor += 'text-success';
+          classIcon  += 'fa-check-circle';
+        } else if (dataItem[head].toLowerCase() === 'issuing') {
+          classColor += 'text-muted';
+          classIcon  += 'fa-circle-o';
+        } else if (dataItem[head].toLowerCase() === 'failed') {
+          classColor += 'text-danger';
+          classIcon  += 'fa-ban';
+        }
+
+        return (
+          <td key={index} className={head}>
+            <span className={classColor}>
+              <i className={classIcon} aria-hidden="true"></i>
+              {dataItem[head]}
+            </span>
+          </td>
+        );
+
       default:
-        return (<td key={index} className={head}>
-                  {dataItem[head]}
-                </td>);
+        return (
+          <td key={index} className={head}>
+            {dataItem[head]}
+          </td>
+        );
     }
   }
 

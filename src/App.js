@@ -43,24 +43,31 @@ class App extends Component {
     document.addEventListener('mouseup', function() {
       let selection = window.getSelection();
       if (selection.anchorNode) {
-        let range = selection.getRangeAt(0);
-        let rect = range.getBoundingClientRect();
-        let params = {
-          message: selection.focusNode.data,
-          bottom: rect.bottom,
-          height: rect.height,
-          left: rect.left,
-          right: rect.right,
-          top: rect.top,
-          width: rect.width,
-          x: rect.x,
-          y: rect.y
-        };
+        let attr = selection.focusNode
+              .parentNode.attributes.getNamedItem('data-tooltip');
 
-        if (rect.width !== 0) {
-          that.props.showTooltip(params);
-        } else {
-          that.props.hideTooltip();
+        if (attr) {
+
+          let range = selection.getRangeAt(0);
+          let rect = range.getBoundingClientRect();
+
+          let params = {
+            message: selection.focusNode.data,
+            bottom: rect.bottom,
+            height: rect.height,
+            left: rect.left,
+            right: rect.right,
+            top: rect.top,
+            width: rect.width,
+            x: rect.x,
+            y: rect.y
+          };
+
+          if (rect.width !== 0) {
+            that.props.showTooltip(params);
+          } else {
+            that.props.hideTooltip();
+          }
         }
 
       } else {
