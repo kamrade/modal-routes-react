@@ -3,7 +3,6 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
 }
 
 .App {
@@ -64,12 +63,4 @@ p {
 
 .component {
   position: relative;
-}
-
-.cp-close {
-  position: absolute;
-  z-index: 1;
-  top: 0.75rem;
-  right: 0.75rem;
-  cursor: pointer;
 }

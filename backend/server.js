@@ -11,12 +11,15 @@ const loads = require('./data/loads-mock-data');
 let alerts = [
   {
     _id: 1,
+    type: "warning",
     message: "Pariatur quod veniam rem aperiam laboriosam autem, adipisci ut tenetur, voluptates ad! Omnis quia ad expedita."
   }, {
     _id: 2,
+    type: "warning",
     message: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem iusto esse corrupti eum, aliquam."
   }, {
     _id: 3,
+    type: "warning",
     message: "Short message."
   },
 ];

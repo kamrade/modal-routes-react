@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Libre+Franklin:300,400,400i,500,700");
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700");
 /*!
  * Bootstrap v4.0.0-beta.2 (https://getbootstrap.com)
  * Copyright 2011-2017 The Bootstrap Authors
@@ -4678,6 +4678,9 @@ input::-webkit-contacts-auto-fill-button {
   position: absolute;
   right: 0; }
 
+body {
+  font-family: 'Roboto', sans-serif; }
+
 .container-sm {
   max-width: 558px; }
 
@@ -4863,13 +4866,44 @@ a.btn-warning:visited, a.btn-warning:link {
   font-size: 13px; }
 
 .Alert {
-  padding: 0.25rem 1rem;
-  padding-right: 2rem;
+  padding: 1rem;
+  padding-right: 4rem;
+  padding-left: 4rem;
   margin: 1rem;
   border-radius: 0.0625rem;
-  background-color: rgba(255, 200, 41, 0.2); }
-  .Alert p {
-    line-height: 1.15; }
+  border: 1px solid #dee2e6;
+  position: relative;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03); }
+  .Alert.warning {
+    border-left: 4px solid #FFC829; }
+    .Alert.warning:after {
+      font: normal normal normal 14px/1 FontAwesome;
+      content: '\f071';
+      position: absolute;
+      z-index: 1;
+      left: 1.5rem;
+      top: 1.5rem;
+      font-size: 1rem;
+      color: #FFC829; }
+  .Alert p.AlertMessage {
+    font-size: 13px;
+    line-height: 1rem;
+    padding: calc(0.5rem - 1px) 0;
+    margin: 0; }
+  .Alert .cp-close {
+    position: absolute;
+    z-index: 1;
+    top: 1.5rem;
+    font-size: 0.75rem;
+    line-height: 1;
+    right: 1.5rem;
+    cursor: pointer;
+    color: #a1a8ae;
+    transition: all 0.2s ease-in-out; }
+    .Alert .cp-close:hover {
+      color: #343a40; }
 
 .tooltipContainer {
   position: fixed;
@@ -4880,6 +4914,7 @@ a.btn-warning:visited, a.btn-warning:link {
 
 .Tooltip {
   position: fixed;
+  z-index: 2;
   top: 50%;
   left: 50%;
   background-color: #000;
@@ -4890,8 +4925,7 @@ a.btn-warning:visited, a.btn-warning:link {
 
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif; }
+  padding: 0; }
 
 .App {
   position: relative; }
@@ -4941,10 +4975,3 @@ p {
 
 .component {
   position: relative; }
-
-.cp-close {
-  position: absolute;
-  z-index: 1;
-  top: 0.75rem;
-  right: 0.75rem;
-  cursor: pointer; }

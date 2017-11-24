@@ -33,22 +33,33 @@ class App extends Component {
     document.addEventListener('mouseup', function() {
 
       let selection = window.getSelection();
-      let range = selection.getRangeAt(0);
-      let rect = range.getBoundingClientRect();
+      if (selection.anchorNode) {
+        let range = selection.getRangeAt(0);
+        let rect = range.getBoundingClientRect();
 
-      let params = {
-        message: "test1 message",
-        bottom: rect.bottom,
-        height: rect.height,
-        left: rect.left,
-        right: rect.right,
-        top: rect.top,
-        width: rect.width,
-        x: rect.x,
-        y: rect.y
-      };
+        // console.log(selection.focusNode.data);
 
-      that.props.showTooltip(params);
+        let params = {
+          message: selection.focusNode.data,
+          bottom: rect.bottom,
+          height: rect.height,
+          left: rect.left,
+          right: rect.right,
+          top: rect.top,
+          width: rect.width,
+          x: rect.x,
+          y: rect.y
+        };
+
+        if (rect.width !== 0) {
+          that.props.showTooltip(params);
+        } else {
+          that.props.hideTooltip();
+        }
+
+      } else {
+        that.props.hideTooltip();
+      }
 
     }, false);
 
@@ -59,16 +70,11 @@ class App extends Component {
 
     return (
       <div className="App">
-        <button
-          onClick={this.props.showTooltip.bind(this)}
-          className="btn btn-primary">Show</button>
-        <button
-          onClick={this.props.hideTooltip.bind(this)}
-          className="btn btn-secondary">Hide</button>
         <Header/>
         {this.props.alerts.map((item, index) => {
           return (
             <Alert
+              type={item.type}
               key={index}
               removeAlert={this.props.removeAlert}
               id={item._id}
