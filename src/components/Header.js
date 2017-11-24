@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Dropdown from './lib/Dropdown';
 
 function Header(props) {
@@ -23,16 +23,9 @@ function Header(props) {
         <Dropdown></Dropdown>
       </div>
       <div className="header-item-container">
-        <p>Username</p>
+        <p><i className="fa fa-user pr-2" aria-hidden="true"></i>Username</p>
       </div>
-
-      {/* <ul className="nav nav-auxiliary">
-        <li><Link to="#modal">Empty Modal</Link></li>
-        <li><Link to="#modal-order">Order</Link></li>
-        <li><Link to="#modal-multiorder">Multiorder</Link></li>
-        <li><Link to="#modal-massload">Mass Load</Link></li>
-      </ul> */}
-
+      
     </div>
   )
 }

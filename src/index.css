@@ -4680,13 +4680,13 @@ input::-webkit-contacts-auto-fill-button {
 
 body {
   font-family: 'Roboto', sans-serif; }
+  body.modal {
+    overflow: hidden;
+    padding-right: 1rem; }
 
 a:focus {
   outline: none;
   box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1); }
-
-body {
-  min-width: 1000px; }
 
 .show {
   display: block !important; }
@@ -4705,7 +4705,9 @@ body {
   padding-left: 1rem; }
 
 .grid-title {
-  font-size: 1rem; }
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: 700; }
 
 .card {
   padding: 1rem;
@@ -5010,7 +5012,8 @@ a.btn-warning:visited, a.btn-warning:link {
     box-shadow: 0 0 16px rgba(0, 0, 0, 0.08), 0 0 4px rgba(0, 0, 0, 0.08);
     border-top: 6px solid #0090FF;
     max-width: 320px;
-    min-width: 120px; }
+    min-width: 120px;
+    transition: all 0.2s ease-in-out; }
     .DropdownSmooth .dds-items-container::before {
       content: '';
       width: 0;

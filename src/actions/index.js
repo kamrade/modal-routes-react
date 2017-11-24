@@ -3,6 +3,14 @@ export const SET_LOADS    = 'SET_LOADS';
 export const SET_ALERTS   = 'SET_ALERTS';
 export const SHOW_TOOLTIP = 'SHOW_TOOLTIP';
 export const HIDE_TOOLTIP =  'HIDE_TOOLTIP';
+export const SET_MODAL    =  'SET_MODAL';
+
+export function setModal(modal) {
+  return {
+    type: SET_MODAL,
+    modal
+  }
+}
 
 export function setCards(cards) {
   return {

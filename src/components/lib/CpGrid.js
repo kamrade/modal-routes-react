@@ -1,22 +1,12 @@
 import React, { Component } from 'react';
-
 import PropTypes from 'prop-types';
 
 class CpGrid extends Component {
-
   render() {
 
     let data = this.props.data || [];
     let headers = this.props.headers || [];
     let title = this.props.title || '';
-
-    const emptyMessage = (
-      <p>There are nothing to show.</p>
-    );
-
-    const cardsList = (
-      <p>Items List</p>
-    );
 
     return (
       <div className="CpGrid">

@@ -23,6 +23,15 @@ import Tooltip from "./components/lib/Tooltip";
 import Alert from "./components/lib/Alert";
 
 class App extends Component {
+
+  componentDidUpdate() {
+    if(this.props.modal) {
+      document.body.classList.add('modal');
+    } else {
+      document.body.classList.remove('modal');
+    }
+  }
+
   componentDidMount() {
     this.props.fetchAlerts();
     this.props.fetchCards();
@@ -112,7 +121,8 @@ App.propTypes = {
 
 function mapStateToProps(state) {
   return {
-    alerts: state.alerts
+    alerts: state.alerts,
+    modal:  state.ui.modal
   };
 };
 

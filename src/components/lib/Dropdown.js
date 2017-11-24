@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import classNames from 'classnames';
 
 class Dropdown extends Component {
 
@@ -55,10 +56,16 @@ class Dropdown extends Component {
   }
 
   render() {
+    const classes = classNames({
+      'dds-items-container': true,
+      'show': this.state.showDropdown
+    });
+
     return (
       <div ref={node => this.ddNode = node} className="DropdownSmooth">
         <button onClick={ this.toggleDropdown.bind(this) } className="btn btn-link btn-dds">+</button>
-        <div className={`dds-items-container ${this.state.showDropdown ? 'show' : ''}`}>
+
+        <div ref={node => this.ddCont = node} className={classes}>
           <ul className="dds--items-list">
             {this.state.items.map(item => (
               <li key={item.id} className="dds--item">

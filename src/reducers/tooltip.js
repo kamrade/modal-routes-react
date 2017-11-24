@@ -13,7 +13,6 @@ export default function tooltip(state = initialState, action = {}) {
   switch(action.type) {
 
     case SHOW_TOOLTIP:
-      // console.log(action);
       return {
         show: action.show,
         message: action.message,
