@@ -4,7 +4,7 @@ class ManageProfile extends Component {
   render() {
     return (
       <div className="ManageProfile">
-        <h4>Manage Profile</h4>
+        <h2 className="page-title">Manage Profile</h2>
       </div>
     )
   };

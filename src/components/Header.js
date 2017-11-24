@@ -3,7 +3,11 @@ import { Link, NavLink } from 'react-router-dom';
 
 function Header(props) {
   return (
-    <div className="header">
+    <div className="Header">
+
+      <div className="logo-container">
+        <img src="./assets/logo.png" alt="" className="logo-image"/>
+      </div>
 
       <ul className="nav nav-main">
         <li><NavLink to="/dashboard">Dashboard</NavLink></li>

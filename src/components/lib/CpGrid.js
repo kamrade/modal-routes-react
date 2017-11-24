@@ -20,8 +20,9 @@ class CpGrid extends Component {
 
     return (
       <div className="CpGrid">
-        { data.length === 0 ? emptyMessage : cardsList }
-        <h3>{title}</h3>
+        {/* { data.length === 0 ? emptyMessage : cardsList } */}
+        <h3 className="grid-title">{title}</h3>
+
         <div className="table-wrapper">
           <table className="table table-hover">
             <thead>

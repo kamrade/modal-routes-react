@@ -9,7 +9,6 @@ import CpGrid from 'components/lib/CpGrid';
 class Dashboard extends Component {
 
   render() {
-
     let cardHeaders = [
       'cardID',
       'cardNumber',
@@ -32,8 +31,7 @@ class Dashboard extends Component {
 
     return (
       <div className="Dashboard">
-        <h2>Dashboard</h2>
-        <div className="card">
+        <div className="card mb-3">
           <CpGrid data={this.props.cards} headers={cardHeaders} title="Last 10 card orders"/>
         </div>
         <div className="card">

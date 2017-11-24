@@ -4,7 +4,7 @@ class LoadHistory extends Component {
   render() {
     return (
       <div className="LoadHistory">
-        <h4>Load History</h4>
+        <h2 className="page-title">Load History</h2>
       </div>
     )
   };
