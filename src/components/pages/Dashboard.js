@@ -7,6 +7,9 @@ import CpGrid from 'components/lib/CpGrid';
 class Dashboard extends Component {
 
   render() {
+
+    // should be in redux store?
+    // should be fetched from a server?
     let cardHeaders = [
       'cardID',
       'cardNumber',
@@ -30,10 +33,20 @@ class Dashboard extends Component {
     return (
       <div className="Dashboard">
         <div className="mb-3">
-          <CpGrid data={this.props.cards} headers={cardHeaders} title="Last 10 card orders"/>
+          <CpGrid
+            data={this.props.cards}
+            headers={cardHeaders}
+            history={this.props.history}
+            title="Last 10 card orders"
+          />
         </div>
         <div className="">
-          <CpGrid data={this.props.loads} headers={loadHeaders} title="Last 10 card loads"/>
+          <CpGrid
+            data={this.props.loads}
+            headers={loadHeaders}
+            history={this.props.history}
+            title="Last 10 card loads"
+          />
         </div>
       </div>
     )

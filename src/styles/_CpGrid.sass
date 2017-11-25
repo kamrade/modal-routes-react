@@ -14,17 +14,9 @@
 
   .table-cell
     cursor: pointer
-    &::after
-      content: '\f142'
-      font: normal normal normal 14px/1 FontAwesome
-      color: $gray-300
-      display: inline-block
-      vertical-align: middle
-      margin-left: 0.5rem
-      width: 0.5rem
-      height: 1rem
-      // background-color: red
-      visibility: hidden
+    .btn-cell-context-menu
+      +transition($transition-base)
+      opacity: 0.4
     &:hover
-      &::after
-        visibility: visible
+      .btn-cell-context-menu
+        opacity: 1

@@ -9,7 +9,10 @@ class CpGrid extends Component {
       case 'description':
         return (
           <td key={index} >
-            <span data-tooltip="true" className={`table-cell ${head}`}>{dataItem[head]}</span>
+            <span
+              data-tooltip="true"
+              className={`table-cell ${head}`}
+            >{dataItem[head]}</span>
           </td>
         );
 
@@ -27,6 +30,11 @@ class CpGrid extends Component {
           <td key={index}>
             <span className={`table-cell ${head} + big-value`}>
               {dataItem[head]}
+              <i
+                onClick={(e) => { e.stopPropagation(); console.log('dots')}}
+                className="fa fa-ellipsis-v text-lighten ml-2 btn-cell-context-menu"
+                aria-hidden="true">
+              </i>
             </span>
           </td>
         );
@@ -69,6 +77,15 @@ class CpGrid extends Component {
     }
   }
 
+  rowClickHandler(e, s) {
+    console.log('row click', s);
+    this.props.history.push(`/cards/${s.cardID}`);
+  }
+
+  cellContextClickhandler() {
+
+  }
+
   render() {
 
     let data = this.props.data.slice(0, 9) || [];
@@ -105,28 +122,22 @@ class CpGrid extends Component {
             </thead>
             <tbody>
               {data.map((dataItem, dataIndex) => {
-                return (<tr key={dataIndex}>
+                return (
+                    <tr key={dataIndex} onClick={ (e) => { this.rowClickHandler.call(this, e, dataItem)} }>
+                      <td className="checker">
+                        <i className="fa fa-check-circle" aria-hidden="true"></i>
+                      </td>
 
-                  <td className="checker">
-                    <i className="fa fa-check-circle" aria-hidden="true"></i>
-                  </td>
+                      {headers.map((head, headIndex) => {
+                        return that.renderCell(head, headIndex, dataItem);
+                      })}
 
-                  {/* Здесь все SWITCH нужно будет прописать */}
-                  {headers.map((head, headIndex) => {
-                    return that.renderCell(head, headIndex, dataItem);
-                    // return (
-                    //   <td key={headIndex} className={head}>
-                    //     {dataItem[head]}
-                    //   </td>
-                    // );
-                  })}
+                      <td className="menu">
+                        <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
+                      </td>
+                    </tr>
 
-                  <td className="menu">
-                    <i className="fa fa-ellipsis-h" aria-hidden="true"></i>
-                  </td>
-
-
-                </tr>)
+                )
               })}
             </tbody>
           </table>

@@ -1,18 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
+import CpGrid from 'components/lib/CpGrid';
+
 class Cards extends Component {
   render() {
+
+    let cardHeaders = []
+    if(this.props.cards[0]) {
+      cardHeaders = Object.keys(this.props.cards[0]);
+    } else {
+      cardHeaders = [];
+    }
+
     return (
       <div className="Cards">
-        <Link to="/cards/11">Card 1</Link><br />
-        <Link to="/cards/11">Card 2</Link><br />
-        <Link to="/cards/11">Card 3</Link><br />
-        <Link to="/cards/11">Card 4</Link><br />
-        <Link to="/cards/11">Card 5</Link><br />
+        <CpGrid
+          data={this.props.cards}
+          headers={cardHeaders}
+          title="Last 10 card orders"
+          history={this.props.history}
+        />
       </div>
     )
   };
 }
 
-export default Cards;
+function mapStateToProps(state) {
+  return {
+    cards: state.cards
+  };
+};
+
+
+export default withRouter( connect(mapStateToProps, {})(Cards) );

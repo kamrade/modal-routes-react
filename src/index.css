@@ -5093,18 +5093,11 @@ a.btn-warning:visited, a.btn-warning:link {
 
 .CpGrid .table-cell {
   cursor: pointer; }
-  .CpGrid .table-cell::after {
-    content: '\f142';
-    font: normal normal normal 14px/1 FontAwesome;
-    color: #dee2e6;
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-    width: 0.5rem;
-    height: 1rem;
-    visibility: hidden; }
-  .CpGrid .table-cell:hover::after {
-    visibility: visible; }
+  .CpGrid .table-cell .btn-cell-context-menu {
+    transition: all 0.2s ease-in-out;
+    opacity: 0.4; }
+  .CpGrid .table-cell:hover .btn-cell-context-menu {
+    opacity: 1; }
 
 body {
   margin: 0;
