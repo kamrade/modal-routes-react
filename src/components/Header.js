@@ -32,22 +32,24 @@ function Header(props) {
         <img src="./assets/logo.png" alt="" className="logo-image"/>
       </div>
 
-      <ul className="nav nav-main">
-        <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-        <li><NavLink to="/cards">Cards</NavLink></li>
-        <li><NavLink to="/orders">Orders</NavLink></li>
-        <li><NavLink to="/load-history">Load History</NavLink></li>
-        <li><NavLink to="/manage-profile">Manage Profile</NavLink></li>
-        <li><NavLink to="/topics">Topics</NavLink></li>
-      </ul>
+      <div className="header--block nav-wrapper">
+        <ul className="nav nav-main">
+          <li><NavLink to="/dashboard">Dashboard</NavLink></li>
+          <li><NavLink to="/cards">Cards</NavLink></li>
+          <li><NavLink to="/orders">Orders</NavLink></li>
+          <li><NavLink to="/load-history">Load History</NavLink></li>
+          <li><NavLink to="/manage-profile">Manage Profile</NavLink></li>
+          <li><NavLink to="/topics">Topics</NavLink></li>
+        </ul>
+      </div>
 
-      <div className="header-item-container">
+      <div className="header--block">
         <Dropdown
           items={dropdownItems}
         ></Dropdown>
       </div>
-      <div className="header-item-container">
-        <p><i className="fa fa-user pr-2" aria-hidden="true"></i>Username</p>
+      <div className="header--block">
+        <p><i className="fa fa-user pr-2" aria-hidden="true"></i>Dennis Roadman</p>
       </div>
 
     </div>

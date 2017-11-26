@@ -6,7 +6,15 @@ import { withRouter } from 'react-router-dom'
 
 import PropTypes from 'prop-types';
 
-import { fetchAlerts, removeAlert, fetchCards, fetchLoads, showTooltip, hideTooltip } from './actions';
+import {
+  fetchAlerts,
+  removeAlert,
+  fetchCards,
+  fetchOrders,
+  fetchLoads,
+  showTooltip,
+  hideTooltip
+} from './actions';
 
 import Dashboard from "./components/pages/Dashboard";
 import Cards from "./components/pages/Cards";
@@ -35,6 +43,7 @@ class App extends Component {
   componentDidMount() {
     this.props.fetchAlerts();
     this.props.fetchCards();
+    this.props.fetchOrders();
     this.props.fetchLoads();
 
     let that = this;
@@ -120,11 +129,12 @@ class App extends Component {
 }
 
 App.propTypes = {
-  fetchAlerts: PropTypes.func.isRequired,
-  removeAlert: PropTypes.func.isRequired,
-  fetchCards:  PropTypes.func.isRequired,
-  fetchLoads:  PropTypes.func.isRequired,
-  showTooltip: PropTypes.func.isRequired
+  fetchAlerts:  PropTypes.func.isRequired,
+  removeAlert:  PropTypes.func.isRequired,
+  fetchCards:   PropTypes.func.isRequired,
+  fetchOrders:  PropTypes.func.isRequired,
+  fetchLoads:   PropTypes.func.isRequired,
+  showTooltip:  PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
@@ -138,6 +148,7 @@ export default withRouter( connect(mapStateToProps, {
   fetchAlerts,
   removeAlert,
   fetchCards,
+  fetchOrders,
   fetchLoads,
   showTooltip,
   hideTooltip

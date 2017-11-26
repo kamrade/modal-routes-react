@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
@@ -34,5 +33,4 @@ function mapStateToProps(state) {
   };
 };
 
-
-export default withRouter( connect(mapStateToProps, {})(Cards) );
+export default withRouter(connect(mapStateToProps, {})(Cards));
