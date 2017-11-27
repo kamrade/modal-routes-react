@@ -5027,24 +5027,6 @@ a.btn-warning:visited, a.btn-warning:link {
 
 .DropdownSmooth {
   position: relative; }
-  .DropdownSmooth .btn-dds {
-    line-height: 1rem;
-    font-size: 13px;
-    vertical-align: top;
-    cursor: pointer;
-    border-radius: 50%;
-    padding: 6px 0;
-    width: 2rem;
-    border: 2px solid #0090FF;
-    transition: all 0.2s ease-in-out; }
-    .DropdownSmooth .btn-dds:active, .DropdownSmooth .btn-dds:focus {
-      border: 2px solid white;
-      background-color: #0090FF;
-      color: white;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2); }
-    .DropdownSmooth .btn-dds:hover {
-      background-color: #0090FF;
-      color: white; }
   .DropdownSmooth .dds-items-container {
     display: none;
     position: absolute;
@@ -5107,6 +5089,52 @@ a.btn-warning:visited, a.btn-warning:link {
   .CpGrid .table-cell:hover .btn-cell-context-menu {
     opacity: 1; }
 
+.Indicator {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-left-width: 4px;
+  background-color: #fff;
+  border-radius: 0.0625rem;
+  position: relative; }
+  .Indicator .Indicator--title {
+    font-size: 11px;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1rem;
+    color: #868e96; }
+  .Indicator .Indicator--value {
+    font-size: 24px;
+    line-height: 2rem;
+    font-weight: 300;
+    margin-bottom: 0; }
+  .Indicator .Indicator--control {
+    position: absolute;
+    z-index: 0;
+    right: 1rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem; }
+
+.btn-dds {
+  line-height: 1rem;
+  font-size: 13px;
+  vertical-align: top;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 6px 0;
+  width: 2rem;
+  border: 2px solid #0090FF;
+  transition: all 0.2s ease-in-out; }
+  .btn-dds:active, .btn-dds:focus {
+    border: 2px solid white;
+    background-color: #0090FF;
+    color: white;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.2); }
+  .btn-dds:hover {
+    background-color: #0090FF;
+    color: white; }
+
 body {
   margin: 0;
   padding: 0; }
@@ -5124,9 +5152,6 @@ body {
   left: 0;
   bottom: 0;
   right: 0; }
-
-p {
-  margin: 0.5rem; }
 
 .content {
   padding: 1rem 2rem; }

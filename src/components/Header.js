@@ -49,7 +49,7 @@ function Header(props) {
         ></Dropdown>
       </div>
       <div className="header--block">
-        <p><i className="fa fa-user pr-2" aria-hidden="true"></i>Dennis Roadman</p>
+        <p className="p-2"><i className="fa fa-user pr-2" aria-hidden="true"></i>Dennis Roadman</p>
       </div>
 
     </div>

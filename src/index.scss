@@ -2,6 +2,8 @@
 @import "./styles/Header";
 @import "./styles/DropdownSmooth";
 @import "./styles/CpGrid";
+@import "./styles/Indicator";
+@import "./styles/BtnCircle";
 
 body {
   margin: 0;
@@ -25,9 +27,9 @@ body {
   right: 0;
 }
 
-p {
-  margin: 0.5rem;
-}
+// p {
+//   margin: 0.5rem;
+// }
 
 .content {
   padding: 1rem 2rem;
