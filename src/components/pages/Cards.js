@@ -19,7 +19,7 @@ class Cards extends Component {
         <CpGrid
           data={this.props.cards}
           headers={cardHeaders}
-          title="Last 10 card orders"
+          title="Cards Ordered"
           history={this.props.history}
         />
       </div>

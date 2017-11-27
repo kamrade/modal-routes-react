@@ -4,6 +4,7 @@
 @import "./styles/CpGrid";
 @import "./styles/Indicator";
 @import "./styles/BtnCircle";
+@import "./styles/LogoContainer";
 
 body {
   margin: 0;
@@ -17,8 +18,9 @@ body {
 
 .Modal {
   padding: 2rem;
-  color: white;
-  background-color: rgba(0,0,0,0.92);
+  // color: white;
+  // background-color: rgba(0,0,0,0.95);
+  background-color: rgba( $gray-200, 0.96);
   position: fixed;
   z-index: 99;
   top: 0;

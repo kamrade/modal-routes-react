@@ -18,7 +18,7 @@ class Orders extends Component {
         <CpGrid
           data={this.props.orders}
           headers={orderHeaders}
-          title="Orders"
+          title="Total Multiorders"
           history={this.props.history}
         />
       </div>    )

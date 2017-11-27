@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Dropdown from './lib/Dropdown';
+import LogoContainer from './lib/LogoContainer';
 
 function Header(props) {
 
@@ -28,9 +29,10 @@ function Header(props) {
   return (
     <div className="Header">
 
-      <div className="logo-container">
+      {/* <div className="logo-container">
         <img src="./assets/logo.png" alt="" className="logo-image"/>
-      </div>
+      </div> */}
+      <LogoContainer></LogoContainer>
 
       <div className="header--block nav-wrapper">
         <ul className="nav nav-main">

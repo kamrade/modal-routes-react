@@ -16,6 +16,16 @@ class CpGrid extends Component {
           </td>
         );
 
+      case 'cardID':
+        return (
+          <td key={index} onClick={ (e) => { this.showCardDetails.call(this, e, dataItem)} }>
+            <span className={`table-cell table-link ${head}`}>
+              {dataItem[head]}
+            </span>
+          </td>
+        );
+
+
       case 'firstName':
         return (
           <td key={index}>
@@ -77,7 +87,7 @@ class CpGrid extends Component {
     }
   }
 
-  rowClickHandler(e, s) {
+  showCardDetails(e, s) {
     console.log('row click', s);
     this.props.history.push(`/cards/${s.cardID}`);
   }
@@ -123,7 +133,7 @@ class CpGrid extends Component {
             <tbody>
               {data.map((dataItem, dataIndex) => {
                 return (
-                    <tr key={dataIndex} onClick={ (e) => { this.rowClickHandler.call(this, e, dataItem)} }>
+                    <tr key={dataIndex} >
                       <td className="checker">
                         <i className="fa fa-check-circle" aria-hidden="true"></i>
                       </td>

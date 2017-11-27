@@ -4706,6 +4706,9 @@ a:focus {
   font-size: 1.5rem;
   padding-left: 1rem; }
 
+.modal-title {
+  font-size: 1.5rem; }
+
 .grid-title {
   font-size: 1rem;
   line-height: 1rem;
@@ -5007,14 +5010,6 @@ a.btn-warning:visited, a.btn-warning:link {
   padding: 0.5rem 1rem;
   padding-left: 6rem;
   height: 80px; }
-  .Header .logo-container {
-    position: absolute;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    height: 96px; }
-    .Header .logo-container .logo-image {
-      max-height: 100%; }
   .Header .header--block {
     font-size: 13px;
     line-height: 1rem;
@@ -5088,6 +5083,9 @@ a.btn-warning:visited, a.btn-warning:link {
     opacity: 0.4; }
   .CpGrid .table-cell:hover .btn-cell-context-menu {
     opacity: 1; }
+  .CpGrid .table-cell.table-link {
+    color: #0090FF;
+    text-decoration: underline; }
 
 .Indicator {
   padding: 1rem;
@@ -5135,6 +5133,15 @@ a.btn-warning:visited, a.btn-warning:link {
     background-color: #0090FF;
     color: white; }
 
+.LogoContainer {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 96px; }
+  .LogoContainer .logo-image {
+    max-height: 100%; }
+
 body {
   margin: 0;
   padding: 0; }
@@ -5144,8 +5151,7 @@ body {
 
 .Modal {
   padding: 2rem;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.92);
+  background-color: rgba(233, 236, 239, 0.96);
   position: fixed;
   z-index: 99;
   top: 0;

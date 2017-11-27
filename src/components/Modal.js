@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { setModal } from '../actions';
+import SingleOrder from './modals/SingleOrder';
+import MultiOrder from './modals/MultiOrder';
+import MassLoad from './modals/MassLoad';
+import LogoContainer from './lib/LogoContainer';
 
 class Modal extends Component {
 
@@ -28,14 +32,14 @@ class Modal extends Component {
       // this.props.setModal(true);
       return (
         <div className="Modal">
-
-          <h4 className="text-muted">Modal</h4>
-
-          { modalRoute === "order" ? (<h2>Order</h2>) : '' }
-          { modalRoute === "multiorder" ? (<h2>Multiorder</h2>) : '' }
-          { modalRoute === "massload" ? (<h2>Mass Load</h2>) : '' }
-
-          <button className="btn btn-primary" onClick={this.goBack.bind(this)}>Close</button>
+          <LogoContainer></LogoContainer>
+          <div className="container mt-5">
+            {/* <h4 className="text-muted">Modal</h4> */}
+            { modalRoute === "order" ? (<SingleOrder></SingleOrder>) : '' }
+            { modalRoute === "multiorder" ? (<MultiOrder></MultiOrder>) : '' }
+            { modalRoute === "massload" ? (<MassLoad></MassLoad>) : '' }
+            <button className="btn btn-primary" onClick={this.goBack.bind(this)}>Close</button>
+          </div>
         </div>
       )
     } else {
